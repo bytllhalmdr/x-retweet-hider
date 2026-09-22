@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "X Retweet Hider",
+  "version": "1.1.2",
+  "description": "Hides retweets in X (Twitter).",
+  "host_permissions": ["https://x.com/*", "https://twitter.com/*"],
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "X Retweet Hider"
+  },
+  "icons": {
+      "16": "img/16.png",
+      "32": "img/32.png",
+      "48": "img/48.png",
+      "128": "img/128.png"
+    },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["js/hideRetweets.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X Retweet Hider</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </div>
+      <h1>Retweet Hider</h1>
+    </div>
+    
+    <div class="main-content">
+      <div class="toggle-section">
+        <div class="toggle-container">
+          <div class="toggle-info">
+            <span class="toggle-label">Hide Retweets</span>
+            <span class="toggle-description">Hides retweets on X</span>
+          </div>
+          <div class="toggle-switch" id="toggleSwitch">
+            <div class="toggle-handle"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="stats-section">
+        <div class="section-header">
+          <span class="section-title">Statistics</span>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="todayHidden">0</div>
+            <div class="stat-label">Today</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="weekHidden">0</div>
+            <div class="stat-label">This Week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="monthHidden">0</div>
+            <div class="stat-label">This Month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="totalHidden">0</div>
+            <div class="stat-label">Total</div>
+          </div>
+        </div>
+        
+        <div class="top-users-section">
+          <div class="section-subtitle">Top Retweeted Users</div>
+          <div class="users-list" id="topUsersList">
+            <div class="user-item placeholder">
+              <span class="user-name">No data yet</span>
+              <span class="user-count">-</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="stats-actions">
+          <button class="stats-btn" id="exportBtn">
+            <span class="stats-btn-text">Export</span>
+          </button>
+          <button class="stats-btn" id="importBtn">
+            <span class="stats-btn-text">Import</span>
+          </button>
+          <button class="stats-btn stats-btn-danger" id="resetBtn">
+            <span class="stats-btn-text">Reset</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <input type="file" id="importFile" accept=".json" style="display: none;">
+    
+    <div class="status-bar">
+      <div class="status-indicator" id="statusIndicator"></div>
+      <span class="status-text" id="statusText">Checking...</span>
+    </div>
+  </div>
+  
+  <script src="js/popup.js"></script>
+</body>
+</html> 
